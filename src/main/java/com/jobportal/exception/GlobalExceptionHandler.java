@@ -1,4 +1,4 @@
-package com.jobnest.backend.config; // update this with your actual package
+package com.jobportal.exception; // update this with your actual package
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
