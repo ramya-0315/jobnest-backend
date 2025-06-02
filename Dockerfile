@@ -3,6 +3,9 @@ FROM maven:3.9.4-eclipse-temurin-17 AS build
 
 WORKDIR /app
 COPY . .
+
+# ✅ Fix permission error
+RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
 # Stage 2: Run the app
