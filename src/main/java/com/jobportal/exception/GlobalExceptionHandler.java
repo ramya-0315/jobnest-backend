@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 package com.jobportal.exception; // update this with your actual package
-=======
-package com.jobportal.exception; 
->>>>>>> 37b41dd1f627368575567e5ddfe807bcc402c212
+
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
