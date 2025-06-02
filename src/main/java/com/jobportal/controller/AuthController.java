@@ -32,20 +32,11 @@ public class AuthController {
         LoginResponse response = userService.authenticate(request);
         return ResponseEntity.ok(response);
     }
-
     @PostMapping("/signup")
-    public ResponseEntity<String> signup(@RequestBody SignupRequest request) {
-        // Block users from signing up as ADMIN (case-insensitive)
-        if (request.getRole() != null && request.getRole().equalsIgnoreCase("ADMIN")) {
-            return ResponseEntity
-                    .status(HttpStatus.FORBIDDEN)
-                    .body("You are not allowed to register as ADMIN.");
-        }
-
+    public String signup(@RequestBody SignupRequest request) {
         userService.registerUser(request);
-        return ResponseEntity.ok("User registered successfully");
+        return "User registered successfully";
     }
-
 
     @GetMapping("/oauth2/success")
     public String oauth2Success() {
